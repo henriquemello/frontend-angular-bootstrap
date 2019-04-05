@@ -1,0 +1,96 @@
+<app-header></app-header>
+
+<div class="container">
+
+
+
+  <div class="jumbotron" style="background-color:rgb(225, 240, 246);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <i class="fas fa-puzzle-piece fa-3x" style="color:rgb(32, 137, 178)"></i>
+          <strong style="color:gray;padding-left:5%">Sport type</strong>
+          <h2>Cycling</h2>
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-trophy fa-3x" style="color:rgb(32, 137, 178)"></i>
+
+
+          <strong style="color:gray;padding-left:5%">Mode</strong>
+          <h2>Advanced</h2>
+
+        </div>
+        <div class="col-md-4">
+          <i class="fas fa-sign fa-3x" style="color:rgb(32, 137, 178)"></i>
+          <strong style="color:gray;padding-left:5%">Route</strong>
+          <h2>30 Miles</h2>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="container">
+
+    <div style="display:inline;">
+
+      <div style="float:left">
+        <h2>Users</h2>
+      </div>
+      <div style="border: thin solid lightgray; width:70%; float:left;margin:3% 0 0 10px"></div>
+      <div style="float:right;margin-top:2%">
+        <input type="text" id="myInput" class="pull-right" onkeyup="myFunction()" placeholder="Search for names..">
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="panel-body  ">
+
+
+  
+      <table class="table table-hover table-condensed" id="UsersTable">
+
+        <tr class="success">
+          <th>#</th>
+          <th>Username</th>
+          <th>Name</th>
+          <th>Mail</th>
+
+          <th>City</th>
+          <th>Ride in Group</th>
+          <th>Day Of Week</th>
+
+        </tr>
+
+
+        <tr *ngFor="let user of users,let x = index">
+
+
+          <td>{{user.id}}</td>
+
+          <td>{{user.username}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+
+          <td>{{user.address.city}}</td>
+
+          <td>
+            {{getGroupInfo()}}
+          </td>
+          <td>
+            {{getDayOfWeek()}}
+
+          </td>
+        </tr>
+      </table>
+    
+
+    <button type="button" routerLink="/new-user" class="btn btn-primary">New User</button>
+
+  </div>
+</div>
+
+<app-footer></app-footer>
